@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>RIMS Ranchi — Building Navigator</title>
+    <title>RIMS दिशा — Building Navigator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -32,7 +32,6 @@
             overflow-x: hidden;
         }
 
-        /* Subtle grid background */
         body::before {
             content: '';
             position: fixed;
@@ -53,57 +52,38 @@
             padding: 0 16px 40px;
         }
 
-        /* Header */
         header {
-            padding: 32px 0 24px;
+            padding: 28px 0 20px;
             text-align: center;
         }
 
-        .hospital-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--accent-glow);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+        .logo {
+            width: 100px;
+            height: 100px;
             border-radius: 20px;
-            padding: 6px 14px;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--accent);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+            object-fit: contain;
         }
 
-        .hospital-badge .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--green);
-            animation: pulse-dot 2s infinite;
-        }
 
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        h1 {
+        .brand-name {
             font-family: 'Space Mono', monospace;
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
             letter-spacing: -0.5px;
-            line-height: 1.2;
+            color: var(--text);
             margin-bottom: 6px;
         }
 
+        .brand-name .hindi {
+            color: var(--accent);
+        }
         .subtitle {
             color: var(--text-muted);
             font-size: 14px;
             font-weight: 400;
         }
 
-        /* Search */
         .search-wrap {
             position: sticky;
             top: 0;
@@ -128,10 +108,7 @@
             box-shadow: 0 0 0 3px var(--accent-glow);
         }
 
-        .search-icon {
-            color: var(--text-muted);
-            flex-shrink: 0;
-        }
+        .search-icon { color: var(--text-muted); flex-shrink: 0; }
 
         .search-box input {
             width: 100%;
@@ -144,11 +121,8 @@
             padding: 14px 0;
         }
 
-        .search-box input::placeholder {
-            color: var(--text-muted);
-        }
+        .search-box input::placeholder { color: var(--text-muted); }
 
-        /* Section labels */
         .section-label {
             font-size: 11px;
             font-weight: 600;
@@ -158,7 +132,6 @@
             margin: 24px 0 12px 4px;
         }
 
-        /* Building cards */
         .building-list {
             display: flex;
             flex-direction: column;
@@ -214,14 +187,9 @@
             background: var(--accent-glow);
         }
 
-        .building-card.emergency .card-icon {
-            background: var(--emergency-glow);
-        }
+        .building-card.emergency .card-icon { background: var(--emergency-glow); }
 
-        .card-info {
-            flex: 1;
-            min-width: 0;
-        }
+        .card-info { flex: 1; min-width: 0; }
 
         .card-name {
             font-size: 15px;
@@ -253,7 +221,6 @@
             color: var(--emergency);
         }
 
-        /* No results */
         .no-results {
             text-align: center;
             padding: 48px 20px;
@@ -262,7 +229,6 @@
             display: none;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 32px 0 16px;
@@ -271,21 +237,15 @@
             line-height: 1.6;
         }
 
-        /* Hide cards when filtered out */
-        .building-card.hidden {
-            display: none;
-        }
+        .building-card.hidden { display: none; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="hospital-badge">
-                <span class="dot"></span>
-                Open 24/7
-            </div>
-            <h1>RIMS Ranchi</h1>
-            <p class="subtitle">Tap a building to get directions</p>
+            <img src="data:image/png;base64,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" alt="RIMS दिशा" class="logo">
+            <h1 class="brand-name">RIMS <span class="hindi">दिशा</span></h1>
+            <p class="subtitle">Tap a building to get walking directions</p>
         </header>
 
         <div class="search-wrap">
@@ -295,7 +255,6 @@
             </div>
         </div>
 
-        <!-- Emergency -->
         <div class="section-label" data-section="emergency">Emergency</div>
         <div class="building-list" id="emergencyList">
             <a class="building-card emergency" href="https://www.google.com/maps/dir/?api=1&destination=23.388735,85.347895&travelmode=walking" target="_blank" data-keywords="central emergency er accident urgent">
@@ -304,24 +263,18 @@
                     <div class="card-name">Central Emergency</div>
                     <div class="card-desc">24/7 — Accidents, urgent care, first aid</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
-
             <a class="building-card emergency" href="https://www.google.com/maps/dir/?api=1&destination=23.388822,85.347779&travelmode=walking" target="_blank" data-keywords="trauma centre center accident injury road">
                 <div class="card-icon">🏥</div>
                 <div class="card-info">
                     <div class="card-name">Trauma Centre</div>
                     <div class="card-desc">120-bed, 4-storey — Trauma & critical care</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
         </div>
 
-        <!-- Main Buildings -->
         <div class="section-label" data-section="main">Main Buildings</div>
         <div class="building-list" id="mainList">
             <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.390775,85.348251&travelmode=walking" target="_blank" data-keywords="main hospital building opd ward ot surgery medicine ortho neurosurgery ent eye gynae">
@@ -330,46 +283,34 @@
                     <div class="card-name">Main Hospital Building</div>
                     <div class="card-desc">5-storey — OPD, wards, OTs, all major depts</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
-
             <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.388868,85.348643&travelmode=walking" target="_blank" data-keywords="super specialty speciality block cardiology urology nephrology pediatric surgery ctvs plastic">
                 <div class="card-icon">💙</div>
                 <div class="card-info">
                     <div class="card-name">Super Specialty Block</div>
                     <div class="card-desc">Cardiology, Urology, CTVS, Pediatric Surgery</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
-
             <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.389540,85.350134&travelmode=walking" target="_blank" data-keywords="oncology block cancer chemotherapy radiation onco opd library">
                 <div class="card-icon">🔬</div>
                 <div class="card-info">
                     <div class="card-name">Oncology Block</div>
                     <div class="card-desc">Cancer OPD, wards, OTs, central library</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
-
             <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.389156,85.348268&travelmode=walking" target="_blank" data-keywords="paying ward private room paid bed 100 bedded">
                 <div class="card-icon">🛏️</div>
                 <div class="card-info">
                     <div class="card-name">100-Bedded Paying Wards</div>
                     <div class="card-desc">Private rooms at affordable prices</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
         </div>
 
-        <!-- Services -->
         <div class="section-label" data-section="services">Services & Admin</div>
         <div class="building-list" id="servicesList">
             <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.390350,85.348547&travelmode=walking" target="_blank" data-keywords="blood bank transfusion medicine donate donation">
@@ -378,37 +319,27 @@
                     <div class="card-name">Blood Bank</div>
                     <div class="card-desc">Dept of Transfusion Medicine — 24/7</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
-
             <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.393272,85.352099&travelmode=walking" target="_blank" data-keywords="administrative admin building office records medical records director">
                 <div class="card-icon">📋</div>
                 <div class="card-info">
                     <div class="card-name">Administrative Building</div>
                     <div class="card-desc">Offices, medical records, admin</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
-
             <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.391593,85.349896&travelmode=walking" target="_blank" data-keywords="academic block anatomy lecture hall practical college education">
                 <div class="card-icon">🎓</div>
                 <div class="card-info">
                     <div class="card-name">Academic Block</div>
                     <div class="card-desc">Lecture halls, practicals, Anatomy dept</div>
                 </div>
-                <div class="card-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
         </div>
 
-        <div class="no-results" id="noResults">
-            No buildings found. Try a different search.
-        </div>
+        <div class="no-results" id="noResults">No buildings found. Try a different search.</div>
 
         <footer>
             RIMS — Rajendra Institute of Medical Sciences<br>
@@ -425,13 +356,11 @@
         searchInput.addEventListener('input', () => {
             const query = searchInput.value.toLowerCase().trim();
             let visibleCount = 0;
-
             cards.forEach(card => {
                 const name = card.querySelector('.card-name').textContent.toLowerCase();
                 const desc = card.querySelector('.card-desc').textContent.toLowerCase();
                 const keywords = (card.dataset.keywords || '').toLowerCase();
-                const searchable = `${name} ${desc} ${keywords}`;
-
+                const searchable = name + ' ' + desc + ' ' + keywords;
                 if (!query || searchable.includes(query)) {
                     card.classList.remove('hidden');
                     visibleCount++;
@@ -439,14 +368,11 @@
                     card.classList.add('hidden');
                 }
             });
-
-            // Show/hide section labels based on visible children
             sections.forEach(label => {
                 const nextList = label.nextElementSibling;
                 const hasVisible = nextList && nextList.querySelector('.building-card:not(.hidden)');
                 label.style.display = hasVisible ? '' : 'none';
             });
-
             noResults.style.display = visibleCount === 0 ? 'block' : 'none';
         });
     </script>
