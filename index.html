@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -22,11 +22,10 @@
             --emergency-glow: rgba(239, 68, 68, 0.12);
             --green: #22c55e;
             --amber: #f59e0b;
-            --amber-glow: rgba(245, 158, 11, 0.12);
         }
 
         body {
-            font-family: 'DM Sans', 'Noto Sans Devanagari', sans-serif;
+            font-family: 'Noto Sans Devanagari', 'DM Sans', sans-serif;
             background: var(--bg);
             color: var(--text);
             min-height: 100dvh;
@@ -46,162 +45,45 @@
             z-index: 0;
         }
 
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 480px;
-            margin: 0 auto;
-            padding: 0 16px 40px;
-        }
+        .container { position: relative; z-index: 1; max-width: 480px; margin: 0 auto; padding: 0 16px 40px; }
+        .en { font-family: 'DM Sans', sans-serif; }
 
         /* ── Header ── */
-        header {
-            padding: 28px 0 20px;
-            text-align: center;
-        }
-
-        .logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 20px;
-            margin-bottom: 8px;
-            object-fit: contain;
-        }
-
-        .brand-name {
-            font-family: 'Space Mono', monospace;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text);
-            margin-bottom: 2px;
-        }
-
-        .brand-name .highlight {
-            color: var(--accent);
-        }
-
-        .brand-full {
-            font-size: 11px;
-            color: var(--accent);
-            letter-spacing: 0.5px;
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-
-        .subtitle .hi {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            font-size: 13px;
-            display: block;
-            margin-top: 2px;
-            opacity: 0.8;
-        }
+        header { padding: 28px 0 20px; text-align: center; }
+        .logo { width: 100px; height: 100px; border-radius: 20px; margin-bottom: 8px; object-fit: contain; }
+        .brand-name { font-family: 'Space Mono', monospace; font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); margin-bottom: 2px; }
+        .brand-name .highlight { color: var(--accent); }
+        .brand-full { font-size: 11px; color: var(--accent); letter-spacing: 0.5px; font-weight: 500; margin-bottom: 6px; }
+        .subtitle { color: var(--text-muted); font-size: 14px; font-weight: 400; line-height: 1.6; }
+        .subtitle .secondary { font-size: 13px; display: block; margin-top: 2px; opacity: 0.75; }
 
         /* ── Search ── */
-        .search-wrap {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            padding: 12px 0;
-            background: linear-gradient(var(--bg) 60%, transparent);
-        }
-
-        .search-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 0 16px;
-            transition: border-color 0.2s;
-        }
-
-        .search-box:focus-within {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px var(--accent-glow);
-        }
-
+        .search-wrap { position: sticky; top: 0; z-index: 10; padding: 12px 0; background: linear-gradient(var(--bg) 60%, transparent); }
+        .search-box { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 0 16px; transition: border-color 0.2s; }
+        .search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
         .search-icon { color: var(--text-muted); flex-shrink: 0; }
-
-        .search-box input {
-            width: 100%;
-            background: none;
-            border: none;
-            outline: none;
-            color: var(--text);
-            font-family: inherit;
-            font-size: 15px;
-            padding: 14px 0;
-        }
-
+        .search-box input { width: 100%; background: none; border: none; outline: none; color: var(--text); font-family: inherit; font-size: 15px; padding: 14px 0; }
         .search-box input::placeholder { color: var(--text-muted); }
 
         /* ── Section Labels ── */
-        .section-label {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin: 24px 0 12px 4px;
-            line-height: 1.6;
-        }
-
-        .section-label .hi {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            text-transform: none;
-            letter-spacing: 0;
-            font-size: 11px;
-            opacity: 0.7;
-            display: inline;
-            margin-left: 6px;
-        }
+        .section-label { font-size: 12px; font-weight: 600; color: var(--text-muted); margin: 24px 0 12px 4px; line-height: 1.6; }
+        .section-label .secondary { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; display: inline; margin-left: 6px; }
 
         /* ── Building Cards ── */
-        .building-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
+        .building-list { display: flex; flex-direction: column; gap: 10px; }
         .building-card {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 16px;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.2s ease;
-            -webkit-tap-highlight-color: transparent;
-            animation: card-in 0.4s ease both;
+            display: flex; align-items: center; gap: 14px;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px;
+            text-decoration: none; color: inherit; transition: all 0.2s ease;
+            -webkit-tap-highlight-color: transparent; animation: card-in 0.4s ease both;
         }
-
-        .building-card:active {
-            transform: scale(0.98);
-            background: var(--surface-hover);
-        }
-
-        .building-card.emergency {
-            border-color: rgba(239, 68, 68, 0.25);
-            background: linear-gradient(135deg, var(--surface), rgba(239, 68, 68, 0.05));
-        }
+        .building-card:active { transform: scale(0.98); background: var(--surface-hover); }
+        .building-card.emergency { border-color: rgba(239, 68, 68, 0.25); background: linear-gradient(135deg, var(--surface), rgba(239, 68, 68, 0.05)); }
 
         @keyframes card-in {
             from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .building-card:nth-child(1) { animation-delay: 0.05s; }
         .building-card:nth-child(2) { animation-delay: 0.1s; }
         .building-card:nth-child(3) { animation-delay: 0.15s; }
@@ -210,280 +92,105 @@
         .building-card:nth-child(6) { animation-delay: 0.3s; }
         .building-card:nth-child(7) { animation-delay: 0.35s; }
 
-        .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-            background: var(--accent-glow);
-        }
-
+        .card-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: var(--accent-glow); }
         .building-card.emergency .card-icon { background: var(--emergency-glow); }
-
         .card-info { flex: 1; min-width: 0; }
 
-        .card-name {
-            font-size: 15px;
-            font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: 1px;
-        }
+        .card-name { font-size: 15px; font-weight: 600; line-height: 1.4; margin-bottom: 1px; }
+        .card-name-en { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; color: var(--text-muted); line-height: 1.3; margin-bottom: 3px; }
+        .card-desc { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+        .card-desc-en { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--text-muted); opacity: 0.7; line-height: 1.4; }
 
-        .card-name-hi {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-muted);
-            line-height: 1.3;
-            margin-bottom: 3px;
-        }
+        .card-arrow { flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px; background: rgba(59, 130, 246, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent); }
+        .building-card.emergency .card-arrow { background: rgba(239, 68, 68, 0.1); color: var(--emergency); }
 
-        .card-desc {
-            font-size: 12px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        .card-desc-hi {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            font-size: 11px;
-            color: var(--text-muted);
-            opacity: 0.7;
-            line-height: 1.4;
-        }
-
-        .card-arrow {
-            flex-shrink: 0;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            background: rgba(59, 130, 246, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-        }
-
-        .building-card.emergency .card-arrow {
-            background: rgba(239, 68, 68, 0.1);
-            color: var(--emergency);
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 48px 20px;
-            color: var(--text-muted);
-            font-size: 14px;
-            display: none;
-            line-height: 1.6;
-        }
-
+        .no-results { text-align: center; padding: 48px 20px; color: var(--text-muted); font-size: 14px; display: none; line-height: 1.6; }
         .building-card.hidden { display: none; }
 
         /* ── OPD Roster Accordion ── */
-        .opd-section {
-            margin-top: 28px;
-        }
-
+        .opd-section { margin-top: 16px; margin-bottom: 8px; }
         .opd-toggle {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
+            display: flex; align-items: center; justify-content: space-between; width: 100%;
             background: linear-gradient(135deg, var(--surface), rgba(59, 130, 246, 0.05));
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 18px 18px;
-            color: var(--text);
-            font-family: inherit;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-            transition: all 0.2s;
+            border: 1px solid var(--border); border-radius: 16px; padding: 18px;
+            color: var(--text); font-family: inherit; font-size: 15px; font-weight: 600;
+            cursor: pointer; -webkit-tap-highlight-color: transparent; transition: all 0.2s;
         }
+        .opd-toggle:active { transform: scale(0.98); }
+        .opd-toggle:hover { border-color: var(--accent); }
+        .opd-toggle-left { display: flex; align-items: center; gap: 12px; }
+        .opd-toggle-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .opd-toggle-text .secondary { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; color: var(--text-muted); display: block; }
+        .opd-chevron { width: 20px; height: 20px; color: var(--accent); transition: transform 0.3s ease; flex-shrink: 0; }
+        .opd-section.open .opd-chevron { transform: rotate(180deg); }
 
-        .opd-toggle:active {
-            transform: scale(0.98);
-        }
-
-        .opd-toggle:hover {
-            border-color: var(--accent);
-        }
-
-        .opd-toggle-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .opd-toggle-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: var(--accent-glow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .opd-toggle-text .hi {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-muted);
-            display: block;
-        }
-
-        .opd-chevron {
-            width: 20px;
-            height: 20px;
-            color: var(--accent);
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .opd-section.open .opd-chevron {
-            transform: rotate(180deg);
-        }
-
-        .opd-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-
-        .opd-section.open .opd-content {
-            max-height: 8000px;
-        }
-
-        .opd-inner {
-            padding: 12px 0;
-        }
-
-        .opd-note {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            padding: 0 4px;
-            line-height: 1.5;
-        }
+        .opd-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .opd-section.open .opd-content { max-height: 8000px; }
+        .opd-inner { padding: 12px 0; }
+        .opd-note { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; padding: 0 4px; line-height: 1.5; }
 
         .opd-table-wrap {
-            overflow-x: auto;
+            overflow: auto;
             border-radius: 12px;
             border: 1px solid var(--border);
             -webkit-overflow-scrolling: touch;
+            max-height: 70vh;
         }
 
-        .opd-table {
-            width: 100%;
-            min-width: 800px;
-            border-collapse: collapse;
-            font-size: 12px;
-        }
+        .opd-table { width: 100%; min-width: 800px; border-collapse: separate; border-spacing: 0; font-size: 12px; }
 
-        .opd-table thead {
-            position: sticky;
-            top: 0;
-            z-index: 2;
-        }
-
+        .opd-table thead { position: sticky; top: 0; z-index: 4; }
         .opd-table th {
-            background: var(--accent);
-            color: #fff;
-            font-weight: 600;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 10px 10px;
-            text-align: left;
-            white-space: nowrap;
-            border-bottom: 2px solid rgba(255,255,255,0.15);
+            background: var(--accent); color: #fff; font-weight: 600; font-size: 11px;
+            letter-spacing: 0.5px; padding: 10px 10px;
+            text-align: left; white-space: nowrap; border-bottom: 2px solid rgba(255,255,255,0.15);
         }
-
-        .opd-table th:first-child {
-            position: sticky;
-            left: 0;
-            z-index: 3;
-            min-width: 130px;
+        .opd-table th .th-en {
+            display: block; font-size: 9px; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'DM Sans', sans-serif;
         }
+        .opd-table th:first-child { position: sticky; left: 0; z-index: 5; min-width: 140px; }
 
         .opd-table td {
-            padding: 9px 10px;
-            border-bottom: 1px solid var(--border);
-            vertical-align: top;
-            line-height: 1.5;
-            color: var(--text);
-            min-width: 110px;
-        }
-
-        .opd-table td:first-child {
-            position: sticky;
-            left: 0;
-            z-index: 1;
+            padding: 9px 10px; border-bottom: 1px solid var(--border);
+            vertical-align: top; line-height: 1.5; color: var(--text); min-width: 110px;
             background: var(--surface);
-            font-weight: 600;
-            color: var(--accent);
-            font-size: 11px;
-            min-width: 130px;
-            border-right: 1px solid var(--border);
+        }
+        .opd-table td:first-child {
+            position: sticky; left: 0; z-index: 2;
+            background: var(--surface); font-weight: 600; color: var(--accent); font-size: 12px;
+            min-width: 140px; border-right: 1px solid var(--border);
+        }
+        .opd-table td:first-child .dept-en {
+            display: block; font-family: 'DM Sans', sans-serif; font-size: 9px; color: var(--text-muted); font-weight: 500;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-top: 1px;
         }
 
-        .opd-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-        .opd-table tbody tr:nth-child(even) td:first-child { background: var(--surface-hover); }
-        .opd-table tbody tr:hover td { background: rgba(59, 130, 246, 0.04); }
-        .opd-table tbody tr:hover td:first-child { background: rgba(59, 130, 246, 0.08); }
+        .opd-table tbody tr:nth-child(even) td { background: #141d32; }
+        .opd-table tbody tr:nth-child(even) td:first-child { background: #182438; }
+        .opd-table tbody tr:hover td { background: #142244 !important; }
+        .opd-table tbody tr:hover td:first-child { background: #1a3058 !important; }
 
         .opd-table .doc { color: var(--text); }
         .opd-table .nil { color: var(--text-muted); font-style: italic; }
         .opd-table .note { color: var(--text-muted); font-size: 10px; display: block; margin-top: 2px; }
 
         /* ── Footer ── */
-        footer {
-            text-align: center;
-            padding: 32px 0 16px;
-            color: var(--text-muted);
-            font-size: 11px;
-            line-height: 1.8;
-        }
+        footer { text-align: center; padding: 32px 0 16px; color: var(--text-muted); font-size: 11px; line-height: 1.8; }
+        footer .secondary { font-family: 'DM Sans', sans-serif; font-size: 11px; opacity: 0.7; }
 
-        footer .hi {
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            font-size: 11px;
-            opacity: 0.7;
-        }
-
-        /* ── Approximate badge ── */
-        .approx-badge {
-            display: inline-block;
-            font-size: 9px;
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--amber);
-            padding: 1px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            vertical-align: middle;
-            margin-left: 4px;
-        }
+        .approx-badge { display: inline-block; font-size: 9px; background: rgba(245, 158, 11, 0.15); color: var(--amber); padding: 1px 6px; border-radius: 4px; font-weight: 600; letter-spacing: 0.5px; vertical-align: middle; margin-left: 4px; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="data:image/png;base64,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" alt="RIMS DISHA" class="logo">
+            <!-- ✏️ LOGO: Replace "logo.png" with your transparent PNG file name -->
+            <img src="logo.png" alt="RIMS DISHA" class="logo">
             <h1 class="brand-name">RIMS <span class="highlight">DISHA</span></h1>
-            <div class="brand-full">Digital Information & Smart Hospital Assistant</div>
+            <div class="brand-full">Digital Information &amp; Smart Hospital Assistant</div>
             <p class="subtitle">
-                Tap a building to get walking directions
-                <span class="hi">पैदल दिशा-निर्देश के लिए भवन पर टैप करें</span>
+                पैदल दिशा-निर्देश के लिए भवन पर टैप करें
+                <span class="secondary en">Tap a building to get walking directions</span>
             </p>
         </header>
 
@@ -491,180 +198,18 @@
         <div class="search-wrap">
             <div class="search-box">
                 <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" id="searchInput" placeholder="Search buildings / भवन खोजें..." autocomplete="off">
+                <input type="text" id="searchInput" placeholder="भवन खोजें / Search buildings..." autocomplete="off">
             </div>
         </div>
 
-        <!-- ══════════ EMERGENCY ══════════ -->
-        <div class="section-label" data-section="emergency">Emergency <span class="hi">आपातकालीन</span></div>
-        <div class="building-list" id="emergencyList">
-            <a class="building-card emergency" href="https://www.google.com/maps/dir/?api=1&destination=23.388735,85.347895&travelmode=walking" target="_blank" data-keywords="central emergency er accident urgent केंद्रीय आपातकालीन दुर्घटना">
-                <div class="card-icon">🚨</div>
-                <div class="card-info">
-                    <div class="card-name">Central Emergency</div>
-                    <div class="card-name-hi">केंद्रीय आपातकालीन</div>
-                    <div class="card-desc">24/7 — Accidents, urgent care, first aid</div>
-                    <div class="card-desc-hi">24/7 — दुर्घटना, आपातकालीन देखभाल, प्राथमिक चिकित्सा</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <a class="building-card emergency" href="https://www.google.com/maps/dir/?api=1&destination=23.388822,85.347779&travelmode=walking" target="_blank" data-keywords="trauma centre center accident injury road ट्रॉमा सेंटर चोट सड़क दुर्घटना">
-                <div class="card-icon">🏥</div>
-                <div class="card-info">
-                    <div class="card-name">Trauma Centre</div>
-                    <div class="card-name-hi">ट्रॉमा सेंटर</div>
-                    <div class="card-desc">120-bed, 4-storey — Trauma & critical care</div>
-                    <div class="card-desc-hi">120 बिस्तर, 4 मंज़िल — ट्रॉमा एवं गहन चिकित्सा</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-        </div>
-
-        <!-- ══════════ MAIN BUILDINGS ══════════ -->
-        <div class="section-label" data-section="main">Main Buildings <span class="hi">मुख्य भवन</span></div>
-        <div class="building-list" id="mainList">
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.390775,85.348251&travelmode=walking" target="_blank" data-keywords="main hospital building opd ward ot surgery medicine ortho neurosurgery ent eye gynae मुख्य अस्पताल भवन">
-                <div class="card-icon">🏢</div>
-                <div class="card-info">
-                    <div class="card-name">Main Hospital Building</div>
-                    <div class="card-name-hi">मुख्य अस्पताल भवन</div>
-                    <div class="card-desc">5-storey — OPD, wards, OTs, all major depts</div>
-                    <div class="card-desc-hi">5 मंज़िल — ओपीडी, वार्ड, ऑपरेशन थिएटर, सभी विभाग</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.388868,85.348643&travelmode=walking" target="_blank" data-keywords="super specialty speciality block cardiology urology nephrology pediatric surgery ctvs plastic सुपर स्पेशलिटी ब्लॉक हृदय मूत्र">
-                <div class="card-icon">💙</div>
-                <div class="card-info">
-                    <div class="card-name">Super Specialty Block</div>
-                    <div class="card-name-hi">सुपर स्पेशलिटी ब्लॉक</div>
-                    <div class="card-desc">Cardiology, Urology, CTVS, Pediatric Surgery</div>
-                    <div class="card-desc-hi">हृदय रोग, मूत्र रोग, सीटीवीएस, बाल शल्य चिकित्सा</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.389540,85.350134&travelmode=walking" target="_blank" data-keywords="oncology block cancer chemotherapy radiation onco opd library ऑन्कोलॉजी कैंसर कीमोथेरेपी विकिरण पुस्तकालय">
-                <div class="card-icon">🔬</div>
-                <div class="card-info">
-                    <div class="card-name">Oncology Block</div>
-                    <div class="card-name-hi">ऑन्कोलॉजी ब्लॉक</div>
-                    <div class="card-desc">Cancer OPD, wards, OTs, central library</div>
-                    <div class="card-desc-hi">कैंसर ओपीडी, वार्ड, ऑपरेशन थिएटर, केंद्रीय पुस्तकालय</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.389156,85.348268&travelmode=walking" target="_blank" data-keywords="paying ward private room paid bed 100 bedded भुगतान वार्ड निजी कमरा">
-                <div class="card-icon">🛏️</div>
-                <div class="card-info">
-                    <div class="card-name">100-Bedded Paying Wards</div>
-                    <div class="card-name-hi">100 बिस्तर वाले भुगतान वार्ड</div>
-                    <div class="card-desc">Private rooms at affordable prices</div>
-                    <div class="card-desc-hi">किफ़ायती दरों पर निजी कमरे</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <!-- RIO — APPROXIMATE coordinates, update when known -->
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.3895,85.3490&travelmode=walking" target="_blank" data-keywords="rio regional ophthalmology centre eye vision नेत्र विज्ञान केंद्र आँख">
-                <div class="card-icon">👁️</div>
-                <div class="card-info">
-                    <div class="card-name">Regional Ophthalmology Centre (RIO) <span class="approx-badge">≈ APPROX</span></div>
-                    <div class="card-name-hi">क्षेत्रीय नेत्र विज्ञान केंद्र (आर.आई.ओ.)</div>
-                    <div class="card-desc">Eye care, vision services, ophthalmic surgeries</div>
-                    <div class="card-desc-hi">नेत्र देखभाल, दृष्टि सेवाएँ, नेत्र शल्य चिकित्सा</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-        </div>
-
-        <!-- ══════════ SERVICES & ADMIN ══════════ -->
-        <div class="section-label" data-section="services">Services & Admin <span class="hi">सेवाएँ एवं प्रशासन</span></div>
-        <div class="building-list" id="servicesList">
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.390350,85.348547&travelmode=walking" target="_blank" data-keywords="blood bank transfusion medicine donate donation रक्त बैंक आधान दान">
-                <div class="card-icon">🩸</div>
-                <div class="card-info">
-                    <div class="card-name">Blood Bank</div>
-                    <div class="card-name-hi">रक्त बैंक</div>
-                    <div class="card-desc">Dept of Transfusion Medicine — 24/7</div>
-                    <div class="card-desc-hi">आधान चिकित्सा विभाग — 24/7</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.393272,85.352099&travelmode=walking" target="_blank" data-keywords="administrative admin building office records medical records director प्रशासनिक भवन कार्यालय अभिलेख">
-                <div class="card-icon">📋</div>
-                <div class="card-info">
-                    <div class="card-name">Administrative Building</div>
-                    <div class="card-name-hi">प्रशासनिक भवन</div>
-                    <div class="card-desc">Offices, medical records, admin</div>
-                    <div class="card-desc-hi">कार्यालय, चिकित्सा अभिलेख, प्रशासन</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.391593,85.349896&travelmode=walking" target="_blank" data-keywords="academic block anatomy lecture hall practical college education शैक्षणिक भवन व्याख्यान शरीर रचना">
-                <div class="card-icon">🎓</div>
-                <div class="card-info">
-                    <div class="card-name">Academic Block</div>
-                    <div class="card-name-hi">शैक्षणिक भवन</div>
-                    <div class="card-desc">Lecture halls, practicals, Anatomy dept</div>
-                    <div class="card-desc-hi">व्याख्यान कक्ष, प्रायोगिक कक्ष, शरीर रचना विभाग</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <!-- M.S. Office — APPROXIMATE coordinates, update when known -->
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.3925,85.3510&travelmode=walking" target="_blank" data-keywords="ms office medical superintendent director principal एम.एस. कार्यालय चिकित्सा अधीक्षक">
-                <div class="card-icon">🏛️</div>
-                <div class="card-info">
-                    <div class="card-name">M.S. Office <span class="approx-badge">≈ APPROX</span></div>
-                    <div class="card-name-hi">एम.एस. कार्यालय (चिकित्सा अधीक्षक)</div>
-                    <div class="card-desc">Medical Superintendent's office</div>
-                    <div class="card-desc-hi">चिकित्सा अधीक्षक कार्यालय</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-        </div>
-
-        <!-- ══════════ OTHER FACILITIES ══════════ -->
-        <div class="section-label" data-section="facilities">Other Facilities <span class="hi">अन्य सुविधाएँ</span></div>
-        <div class="building-list" id="facilitiesList">
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.388033,85.350548&travelmode=walking" target="_blank" data-keywords="vishram sadan rest house guest attendant patient relative रोगी परिचारक विश्राम सदन">
-                <div class="card-icon">🏠</div>
-                <div class="card-info">
-                    <div class="card-name">Vishram Sadan</div>
-                    <div class="card-name-hi">विश्राम सदन</div>
-                    <div class="card-desc">Rest house for patient attendants</div>
-                    <div class="card-desc-hi">रोगी परिचारकों के लिए विश्राम गृह</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.387425,85.351947&travelmode=walking" target="_blank" data-keywords="postmortem house autopsy forensic medicine शव परीक्षा गृह फॉरेंसिक">
-                <div class="card-icon">🔍</div>
-                <div class="card-info">
-                    <div class="card-name">Postmortem House</div>
-                    <div class="card-name-hi">शव परीक्षा गृह</div>
-                    <div class="card-desc">Forensic medicine, autopsy services</div>
-                    <div class="card-desc-hi">फॉरेंसिक चिकित्सा, शव परीक्षा सेवाएँ</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.387425,85.351947&travelmode=walking" target="_blank" data-keywords="mortuary body cold storage शव गृह शीतगृह">
-                <div class="card-icon">🏚️</div>
-                <div class="card-info">
-                    <div class="card-name">Mortuary</div>
-                    <div class="card-name-hi">शव गृह</div>
-                    <div class="card-desc">Body preservation & cold storage</div>
-                    <div class="card-desc-hi">शव संरक्षण एवं शीत भंडारण</div>
-                </div>
-                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-            </a>
-        </div>
-
-        <!-- ══════════ OPD ROSTER ACCORDION ══════════ -->
+        <!-- ══════════ OPD ROSTER ══════════ -->
         <div class="opd-section" id="opdSection">
             <button class="opd-toggle" id="opdToggle" aria-expanded="false">
                 <span class="opd-toggle-left">
                     <span class="opd-toggle-icon">📅</span>
                     <span class="opd-toggle-text">
-                        OPD Roster / Doctor Schedule
-                        <span class="hi">ओपीडी रोस्टर / चिकित्सक अनुसूची</span>
+                        ओपीडी रोस्टर / चिकित्सक अनुसूची
+                        <span class="secondary en">OPD Roster / Doctor Schedule</span>
                     </span>
                 </span>
                 <svg class="opd-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
@@ -672,24 +217,24 @@
             <div class="opd-content" id="opdContent">
                 <div class="opd-inner">
                     <div class="opd-note">
-                        ⬅️ Scroll horizontally to view all days / सभी दिन देखने के लिए दाएँ-बाएँ स्क्रॉल करें
+                        ⬅️ सभी दिन देखने के लिए दाएँ-बाएँ स्क्रॉल करें / Scroll to view all days
                     </div>
                     <div class="opd-table-wrap">
                         <table class="opd-table">
                             <thead>
                                 <tr>
-                                    <th>Department<br>विभाग</th>
-                                    <th>Mon<br>सोम</th>
-                                    <th>Tue<br>मंगल</th>
-                                    <th>Wed<br>बुध</th>
-                                    <th>Thu<br>गुरु</th>
-                                    <th>Fri<br>शुक्र</th>
-                                    <th>Sat<br>शनि</th>
+                                    <th>विभाग<span class="th-en">Dept</span></th>
+                                    <th>सोम<span class="th-en">Mon</span></th>
+                                    <th>मंगल<span class="th-en">Tue</span></th>
+                                    <th>बुध<span class="th-en">Wed</span></th>
+                                    <th>गुरु<span class="th-en">Thu</span></th>
+                                    <th>शुक्र<span class="th-en">Fri</span></th>
+                                    <th>शनि<span class="th-en">Sat</span></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>MEDICINE<br>चिकित्सा</td>
+                                    <td>चिकित्सा<span class="dept-en">Medicine</span></td>
                                     <td class="doc">Dr. Vidyapati</td>
                                     <td class="doc">Dr. C. B. Sharma</td>
                                     <td class="doc">Dr. Bindey Kumar</td>
@@ -698,7 +243,7 @@
                                     <td class="doc">Dr. Manoj Kumar Prasad</td>
                                 </tr>
                                 <tr>
-                                    <td>SURGERY<br>शल्य चिकित्सा</td>
+                                    <td>शल्य चिकित्सा<span class="dept-en">Surgery</span></td>
                                     <td class="doc">Dr. Shital Malua</td>
                                     <td class="doc">Dr. D. K. Sinha</td>
                                     <td class="doc">Dr. Pankaj Bodra</td>
@@ -707,7 +252,7 @@
                                     <td class="doc">Dr. Farrukh Hassan</td>
                                 </tr>
                                 <tr>
-                                    <td>ORTHOPAEDICS<br>अस्थि रोग</td>
+                                    <td>अस्थि रोग<span class="dept-en">Orthopaedics</span></td>
                                     <td class="doc">Dr. Vinay Prabhat</td>
                                     <td class="doc">Dr. G. K. Gupta</td>
                                     <td class="doc">Dr. G. K. Gupta</td>
@@ -716,7 +261,7 @@
                                     <td class="doc">Dr. G. K. Gupta</td>
                                 </tr>
                                 <tr>
-                                    <td>NEUROSURGERY<br>स्नायु शल्य</td>
+                                    <td>स्नायु शल्य<span class="dept-en">Neurosurgery</span></td>
                                     <td class="doc">Dr. C. B. Sahay</td>
                                     <td class="doc">Dr. Anand Prakash</td>
                                     <td class="doc">Dr. C. B. Sahay</td>
@@ -725,16 +270,16 @@
                                     <td class="doc">Dr. Anand Prakash<span class="note">Dr. Archana Kumari (Unit Incharge)</span></td>
                                 </tr>
                                 <tr>
-                                    <td>PAEDIATRICS<br>बाल रोग</td>
+                                    <td>बाल रोग<span class="dept-en">Paediatrics</span></td>
                                     <td class="doc">Dr. Rajeeva Mishra</td>
                                     <td class="doc">Dr. Upendra Prasad Sahu</td>
-                                    <td class="doc">Dr. P. Chaudhary<span class="note">1st & 5th Wed: Dr. Kiran Shankar Das; 2nd: Dr. Rameshwar Prasad; 3rd: Dr. Prita Naaz Dubraj; 4th: Dr. Parmanand</span></td>
+                                    <td class="doc">Dr. P. Chaudhary<span class="note">1st &amp; 5th Wed: Dr. Kiran Shankar Das; 2nd: Dr. Rameshwar Prasad; 3rd: Dr. Prita Naaz Dubraj; 4th: Dr. Parmanand</span></td>
                                     <td class="doc">Dr. Rajeeva Mishra</td>
                                     <td class="doc">Dr. Upendra Prasad Sahu</td>
                                     <td class="doc">Dr. Sunanda Jha</td>
                                 </tr>
                                 <tr>
-                                    <td>SKIN / VD & STD<br>त्वचा रोग</td>
+                                    <td>त्वचा रोग<span class="dept-en">Skin / VD &amp; STD</span></td>
                                     <td class="doc">Dr. D. K. Mishra</td>
                                     <td class="doc">Dr. Anand Kumar</td>
                                     <td class="doc">Dr. D. K. Mishra</td>
@@ -743,7 +288,7 @@
                                     <td class="doc">Dr. Anand Kumar</td>
                                 </tr>
                                 <tr>
-                                    <td>PSYCHIATRY<br>मनोचिकित्सा</td>
+                                    <td>मनोचिकित्सा<span class="dept-en">Psychiatry</span></td>
                                     <td class="doc">Dr. Ajay Kumar Bakhla</td>
                                     <td class="doc">Dr. Ajay Kumar Bakhla</td>
                                     <td class="doc">Dr. Ajay Kumar Bakhla</td>
@@ -752,7 +297,7 @@
                                     <td class="doc">Dr. Ajay Kumar Bakhla</td>
                                 </tr>
                                 <tr>
-                                    <td>PAEDIATRIC SURGERY<br>बाल शल्य</td>
+                                    <td>बाल शल्य<span class="dept-en">Paediatric Surgery</span></td>
                                     <td class="doc">Dr. Hirendra Birua, Dr. Shyam Sundar Sahu</td>
                                     <td class="nil">—</td>
                                     <td class="doc">Dr. Abhishek Kumar Singh</td>
@@ -761,7 +306,7 @@
                                     <td class="nil">—</td>
                                 </tr>
                                 <tr>
-                                    <td>PLASTIC SURGERY<br>प्लास्टिक शल्य</td>
+                                    <td>प्लास्टिक शल्य<span class="dept-en">Plastic Surgery</span></td>
                                     <td class="nil">—</td>
                                     <td class="nil">—</td>
                                     <td class="doc">Dr. Vikrant Ranjan<span class="note">9 AM – 1 PM</span></td>
@@ -770,7 +315,7 @@
                                     <td class="doc">Dr. Vikrant Ranjan<span class="note">2 PM – 5 PM</span></td>
                                 </tr>
                                 <tr>
-                                    <td>OBST. & GYNAE.<br>प्रसूति एवं स्त्री रोग</td>
+                                    <td>प्रसूति एवं स्त्री रोग<span class="dept-en">Obst. &amp; Gynae.</span></td>
                                     <td class="doc">Unit-6: Dr. Neelam Nalini</td>
                                     <td class="doc">Unit-2: Dr. Shashi Bala Singh</td>
                                     <td class="doc">Unit-3: Dr. Atima Bharti</td>
@@ -779,34 +324,29 @@
                                     <td class="nil">—</td>
                                 </tr>
                                 <tr>
-                                    <td>NEONATOLOGY<br>नवजात शिशु</td>
-                                    <td class="nil">—</td>
-                                    <td class="nil">—</td>
-                                    <td class="nil">—</td>
-                                    <td class="nil">—</td>
-                                    <td class="nil">—</td>
-                                    <td class="nil">—</td>
+                                    <td>नवजात शिशु<span class="dept-en">Neonatology</span></td>
+                                    <td class="nil">—</td><td class="nil">—</td><td class="nil">—</td><td class="nil">—</td><td class="nil">—</td><td class="nil">—</td>
                                 </tr>
                                 <tr>
-                                    <td>E.N.T.<br>कान-नाक-गला</td>
+                                    <td>कान-नाक-गला<span class="dept-en">E.N.T.</span></td>
                                     <td class="doc">Dr. R. K. Choudhary</td>
-                                    <td class="doc">Dr. Z. M. Khan<span class="note">Morning & evening</span></td>
-                                    <td class="doc">Dr. Sandeep Kumar<span class="note">Morning & evening</span></td>
-                                    <td class="doc">Dr. R. K. Choudhary<span class="note">Morning & evening</span></td>
-                                    <td class="doc">Dr. R. K. Choudhary<span class="note">Morning & evening</span></td>
-                                    <td class="doc">Dr. R. K. Choudhary<span class="note">Morning & evening</span></td>
+                                    <td class="doc">Dr. Z. M. Khan<span class="note">Morning &amp; evening</span></td>
+                                    <td class="doc">Dr. Sandeep Kumar<span class="note">Morning &amp; evening</span></td>
+                                    <td class="doc">Dr. R. K. Choudhary<span class="note">Morning &amp; evening</span></td>
+                                    <td class="doc">Dr. R. K. Choudhary<span class="note">Morning &amp; evening</span></td>
+                                    <td class="doc">Dr. R. K. Choudhary<span class="note">Morning &amp; evening</span></td>
                                 </tr>
                                 <tr>
-                                    <td>OPHTHALMOLOGY<br>नेत्र रोग</td>
+                                    <td>नेत्र रोग<span class="dept-en">Ophthalmology</span></td>
                                     <td class="doc">Dr. R. K. Gupta, Dr. Rahul Prasad</td>
                                     <td class="doc">Dr. M. Deepak Lakra</td>
                                     <td class="doc">Dr. R. K. Gupta</td>
-                                    <td class="doc">Dr. Binod Kumar Sinha<span class="note">Morning & evening</span></td>
+                                    <td class="doc">Dr. Binod Kumar Sinha<span class="note">Morning &amp; evening</span></td>
                                     <td class="doc">Dr. Sandeep Kumar (AM), Dr. Binod Kumar Sinha (PM)</td>
-                                    <td class="doc">1st Sat: Dr. R. K. Gupta; 2nd & 5th: Dr. M. Deepak Lakra; 3rd: Dr. Rahul Prasad; 4th: Dr. Sunil Kumar</td>
+                                    <td class="doc">1st: Dr. R. K. Gupta; 2nd/5th: Dr. M. Deepak Lakra; 3rd: Dr. Rahul Prasad; 4th: Dr. Sunil Kumar</td>
                                 </tr>
                                 <tr>
-                                    <td>TB & CHEST<br>टीबी एवं छाती रोग<span class="note">9 AM – 1 PM</span></td>
+                                    <td>टीबी एवं छाती रोग<span class="dept-en">TB &amp; Chest</span><span class="note">9 AM – 1 PM</span></td>
                                     <td class="doc">Dr. Brajesh Mishra</td>
                                     <td class="doc">Dr. Brajesh Mishra</td>
                                     <td class="doc">Dr. Brajesh Mishra</td>
@@ -815,7 +355,7 @@
                                     <td class="doc">Dr. Brajesh Mishra</td>
                                 </tr>
                                 <tr>
-                                    <td>UROLOGY<br>मूत्र रोग</td>
+                                    <td>मूत्र रोग<span class="dept-en">Urology</span></td>
                                     <td class="doc">Dr. A. Jamal</td>
                                     <td class="doc">Dr. A. Jamal</td>
                                     <td class="doc">Dr. A. Jamal</td>
@@ -824,7 +364,7 @@
                                     <td class="doc">Dr. Rana Pratap Singh</td>
                                 </tr>
                                 <tr>
-                                    <td>RADIATION ONCOLOGY<br>विकिरण ऑन्कोलॉजी</td>
+                                    <td>विकिरण ऑन्कोलॉजी<span class="dept-en">Radiation Oncology</span></td>
                                     <td class="doc">Dr. Anup Kumar (OPD), Dr. Rashmi Singh (TPS)</td>
                                     <td class="doc">Dr. Anup Kumar (CT Sim.), Dr. Rashmi Singh (OPD)</td>
                                     <td class="doc">Dr. Anup Kumar (TPS), Dr. Rashmi Singh (CT Sim.)</td>
@@ -833,7 +373,7 @@
                                     <td class="doc">Dr. Anup Kumar (TPS), Dr. Rashmi Singh (OPD)</td>
                                 </tr>
                                 <tr>
-                                    <td>SURGICAL ONCOLOGY<br>शल्य ऑन्कोलॉजी</td>
+                                    <td>शल्य ऑन्कोलॉजी<span class="dept-en">Surgical Oncology</span></td>
                                     <td class="doc">Dr. Ajit Kr. Kushwaha</td>
                                     <td class="doc">Dr. Rohit Kumar Jha</td>
                                     <td class="nil">—</td>
@@ -842,7 +382,7 @@
                                     <td class="doc">Dr. Rohit Kumar Jha</td>
                                 </tr>
                                 <tr>
-                                    <td>C.T.V.S.<br>हृदय वक्ष शल्य</td>
+                                    <td>हृदय वक्ष शल्य<span class="dept-en">C.T.V.S.</span></td>
                                     <td class="doc">Dr. Anshul Kumar</td>
                                     <td class="doc">Dr. Vineet Mahajan</td>
                                     <td class="doc">Dr. Rakesh Kumar</td>
@@ -851,16 +391,16 @@
                                     <td class="doc">Dr. Rakesh Kumar</td>
                                 </tr>
                                 <tr>
-                                    <td>NEUROLOGY<br>स्नायु रोग</td>
+                                    <td>स्नायु रोग<span class="dept-en">Neurology</span></td>
                                     <td class="doc">Dr. Surendra Kumar</td>
                                     <td class="doc">Dr. Surendra Kumar, Dr. Rupesh Prasad</td>
                                     <td class="doc">Dr. Surendra Kumar</td>
-                                    <td class="doc">Dr. Rupesh Prasad (e-Sanjeevani OPD)<span class="note">1st & 4th Thu: Dr. Surendra Kumar; 2nd & 5th: Dr. Rupesh Prasad</span></td>
+                                    <td class="doc">Dr. Rupesh Prasad (e-Sanjeevani)<span class="note">1st/4th Thu: Dr. Surendra Kumar; 2nd/5th: Dr. Rupesh Prasad</span></td>
                                     <td class="doc">Dr. Surendra Kumar, Dr. Rupesh Prasad</td>
                                     <td class="doc">Dr. Rupesh Prasad</td>
                                 </tr>
                                 <tr>
-                                    <td>CARDIOLOGY<br>हृदय रोग</td>
+                                    <td>हृदय रोग<span class="dept-en">Cardiology</span></td>
                                     <td class="doc">Dr. Prakash Kumar</td>
                                     <td class="doc">Dr. H. N. Ray</td>
                                     <td class="doc">Dr. P. K. Srivastava</td>
@@ -869,7 +409,7 @@
                                     <td class="doc">Dr. Mrinal Kunj</td>
                                 </tr>
                                 <tr>
-                                    <td>NEPHROLOGY<br>गुर्दा रोग</td>
+                                    <td>गुर्दा रोग<span class="dept-en">Nephrology</span></td>
                                     <td class="nil">—</td>
                                     <td class="doc">Dr. Pragya Pant</td>
                                     <td class="nil">—</td>
@@ -878,7 +418,7 @@
                                     <td class="nil">—</td>
                                 </tr>
                                 <tr>
-                                    <td>PMR<br>पुनर्वास चिकित्सा</td>
+                                    <td>पुनर्वास चिकित्सा<span class="dept-en">PMR</span></td>
                                     <td class="doc">Dr. Amit Chaitanya</td>
                                     <td class="doc">Dr. Amit Chaitanya</td>
                                     <td class="doc">Dr. Amit Chaitanya</td>
@@ -887,7 +427,7 @@
                                     <td class="doc">Dr. Amit Chaitanya</td>
                                 </tr>
                                 <tr>
-                                    <td>PAIN & PALLIATIVE CARE<br>दर्द एवं उपशामक देखभाल</td>
+                                    <td>दर्द एवं उपशामक देखभाल<span class="dept-en">Pain &amp; Palliative Care</span></td>
                                     <td class="nil">—</td>
                                     <td class="doc">Dr. Ladhu Lakra, Dr. Wasim Hoda</td>
                                     <td class="nil">—</td>
@@ -902,23 +442,182 @@
             </div>
         </div>
 
+        <!-- ══════════ EMERGENCY ══════════ -->
+        <div class="section-label" data-section="emergency">आपातकालीन <span class="secondary en">EMERGENCY</span></div>
+        <div class="building-list" id="emergencyList">
+            <a class="building-card emergency" href="https://www.google.com/maps/dir/?api=1&destination=23.388735,85.347895&travelmode=walking" target="_blank" data-keywords="central emergency er accident urgent केंद्रीय आपातकालीन दुर्घटना">
+                <div class="card-icon">🚨</div>
+                <div class="card-info">
+                    <div class="card-name">केंद्रीय आपातकालीन</div>
+                    <div class="card-name-en">Central Emergency</div>
+                    <div class="card-desc">24/7 — दुर्घटना, आपातकालीन देखभाल, प्राथमिक चिकित्सा</div>
+                    <div class="card-desc-en">Accidents, urgent care, first aid</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card emergency" href="https://www.google.com/maps/dir/?api=1&destination=23.388822,85.347779&travelmode=walking" target="_blank" data-keywords="trauma centre center accident injury road ट्रॉमा सेंटर चोट सड़क दुर्घटना">
+                <div class="card-icon">🏥</div>
+                <div class="card-info">
+                    <div class="card-name">ट्रॉमा सेंटर</div>
+                    <div class="card-name-en">Trauma Centre</div>
+                    <div class="card-desc">120 बिस्तर, 4 मंज़िल — ट्रॉमा एवं गहन चिकित्सा</div>
+                    <div class="card-desc-en">120-bed, 4-storey — Trauma &amp; critical care</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+        </div>
+
+        <!-- ══════════ MAIN BUILDINGS ══════════ -->
+        <div class="section-label" data-section="main">मुख्य भवन <span class="secondary en">MAIN BUILDINGS</span></div>
+        <div class="building-list" id="mainList">
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.390775,85.348251&travelmode=walking" target="_blank" data-keywords="main hospital building opd ward ot surgery medicine ortho neurosurgery ent eye gynae मुख्य अस्पताल भवन">
+                <div class="card-icon">🏢</div>
+                <div class="card-info">
+                    <div class="card-name">मुख्य अस्पताल भवन</div>
+                    <div class="card-name-en">Main Hospital Building</div>
+                    <div class="card-desc">5 मंज़िल — ओपीडी, वार्ड, ऑपरेशन थिएटर, सभी विभाग</div>
+                    <div class="card-desc-en">5-storey — OPD, wards, OTs, all major depts</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.388868,85.348643&travelmode=walking" target="_blank" data-keywords="super specialty speciality block cardiology urology nephrology pediatric surgery ctvs plastic सुपर स्पेशलिटी ब्लॉक हृदय मूत्र">
+                <div class="card-icon">💙</div>
+                <div class="card-info">
+                    <div class="card-name">सुपर स्पेशलिटी ब्लॉक</div>
+                    <div class="card-name-en">Super Specialty Block</div>
+                    <div class="card-desc">हृदय रोग, मूत्र रोग, सीटीवीएस, बाल शल्य चिकित्सा</div>
+                    <div class="card-desc-en">Cardiology, Urology, CTVS, Pediatric Surgery</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.389540,85.350134&travelmode=walking" target="_blank" data-keywords="oncology block cancer chemotherapy radiation onco opd library ऑन्कोलॉजी कैंसर कीमोथेरेपी विकिरण पुस्तकालय">
+                <div class="card-icon">🔬</div>
+                <div class="card-info">
+                    <div class="card-name">ऑन्कोलॉजी ब्लॉक</div>
+                    <div class="card-name-en">Oncology Block</div>
+                    <div class="card-desc">कैंसर ओपीडी, वार्ड, ऑपरेशन थिएटर, केंद्रीय पुस्तकालय</div>
+                    <div class="card-desc-en">Cancer OPD, wards, OTs, central library</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.389156,85.348268&travelmode=walking" target="_blank" data-keywords="paying ward private room paid bed 100 bedded भुगतान वार्ड निजी कमरा">
+                <div class="card-icon">🛏️</div>
+                <div class="card-info">
+                    <div class="card-name">100 बिस्तर वाले भुगतान वार्ड</div>
+                    <div class="card-name-en">100-Bedded Paying Wards</div>
+                    <div class="card-desc">किफ़ायती दरों पर निजी कमरे</div>
+                    <div class="card-desc-en">Private rooms at affordable prices</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.3895,85.3490&travelmode=walking" target="_blank" data-keywords="rio regional ophthalmology centre eye vision नेत्र विज्ञान केंद्र आँख">
+                <div class="card-icon">👁️</div>
+                <div class="card-info">
+                    <div class="card-name">क्षेत्रीय नेत्र विज्ञान केंद्र (आर.आई.ओ.) <span class="approx-badge">≈ APPROX</span></div>
+                    <div class="card-name-en">Regional Ophthalmology Centre (RIO)</div>
+                    <div class="card-desc">नेत्र देखभाल, दृष्टि सेवाएँ, नेत्र शल्य चिकित्सा</div>
+                    <div class="card-desc-en">Eye care, vision services, ophthalmic surgeries</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+        </div>
+
+        <!-- ══════════ SERVICES & ADMIN ══════════ -->
+        <div class="section-label" data-section="services">सेवाएँ एवं प्रशासन <span class="secondary en">SERVICES &amp; ADMIN</span></div>
+        <div class="building-list" id="servicesList">
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.390350,85.348547&travelmode=walking" target="_blank" data-keywords="blood bank transfusion medicine donate donation रक्त बैंक आधान दान">
+                <div class="card-icon">🩸</div>
+                <div class="card-info">
+                    <div class="card-name">रक्त बैंक</div>
+                    <div class="card-name-en">Blood Bank</div>
+                    <div class="card-desc">आधान चिकित्सा विभाग — 24/7</div>
+                    <div class="card-desc-en">Dept of Transfusion Medicine — 24/7</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.393272,85.352099&travelmode=walking" target="_blank" data-keywords="administrative admin building office records medical records director प्रशासनिक भवन कार्यालय अभिलेख">
+                <div class="card-icon">📋</div>
+                <div class="card-info">
+                    <div class="card-name">प्रशासनिक भवन</div>
+                    <div class="card-name-en">Administrative Building</div>
+                    <div class="card-desc">कार्यालय, चिकित्सा अभिलेख, प्रशासन</div>
+                    <div class="card-desc-en">Offices, medical records, admin</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.391593,85.349896&travelmode=walking" target="_blank" data-keywords="academic block anatomy lecture hall practical college education शैक्षणिक भवन व्याख्यान शरीर रचना">
+                <div class="card-icon">🎓</div>
+                <div class="card-info">
+                    <div class="card-name">शैक्षणिक भवन</div>
+                    <div class="card-name-en">Academic Block</div>
+                    <div class="card-desc">व्याख्यान कक्ष, प्रायोगिक कक्ष, शरीर रचना विभाग</div>
+                    <div class="card-desc-en">Lecture halls, practicals, Anatomy dept</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.3925,85.3510&travelmode=walking" target="_blank" data-keywords="ms office medical superintendent director principal एम.एस. कार्यालय चिकित्सा अधीक्षक">
+                <div class="card-icon">🏛️</div>
+                <div class="card-info">
+                    <div class="card-name">एम.एस. कार्यालय (चिकित्सा अधीक्षक) <span class="approx-badge">≈ APPROX</span></div>
+                    <div class="card-name-en">M.S. Office</div>
+                    <div class="card-desc">चिकित्सा अधीक्षक कार्यालय</div>
+                    <div class="card-desc-en">Medical Superintendent's office</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+        </div>
+
+        <!-- ══════════ OTHER FACILITIES ══════════ -->
+        <div class="section-label" data-section="facilities">अन्य सुविधाएँ <span class="secondary en">OTHER FACILITIES</span></div>
+        <div class="building-list" id="facilitiesList">
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.388033,85.350548&travelmode=walking" target="_blank" data-keywords="vishram sadan rest house guest attendant patient relative रोगी परिचारक विश्राम सदन">
+                <div class="card-icon">🏠</div>
+                <div class="card-info">
+                    <div class="card-name">विश्राम सदन</div>
+                    <div class="card-name-en">Vishram Sadan</div>
+                    <div class="card-desc">रोगी परिचारकों के लिए विश्राम गृह</div>
+                    <div class="card-desc-en">Rest house for patient attendants</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.387425,85.351947&travelmode=walking" target="_blank" data-keywords="postmortem house autopsy forensic medicine शव परीक्षा गृह फॉरेंसिक">
+                <div class="card-icon">🔍</div>
+                <div class="card-info">
+                    <div class="card-name">शव परीक्षा गृह</div>
+                    <div class="card-name-en">Postmortem House</div>
+                    <div class="card-desc">फॉरेंसिक चिकित्सा, शव परीक्षा सेवाएँ</div>
+                    <div class="card-desc-en">Forensic medicine, autopsy services</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+            <a class="building-card" href="https://www.google.com/maps/dir/?api=1&destination=23.387425,85.351947&travelmode=walking" target="_blank" data-keywords="mortuary body cold storage शव गृह शीतगृह">
+                <div class="card-icon">🏚️</div>
+                <div class="card-info">
+                    <div class="card-name">शव गृह</div>
+                    <div class="card-name-en">Mortuary</div>
+                    <div class="card-desc">शव संरक्षण एवं शीत भंडारण</div>
+                    <div class="card-desc-en">Body preservation &amp; cold storage</div>
+                </div>
+                <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </a>
+        </div>
+
         <!-- ── No Results ── -->
         <div class="no-results" id="noResults">
-            No buildings found. Try a different search.<br>
-            <span style="font-family:'Noto Sans Devanagari',sans-serif; font-size:13px;">कोई भवन नहीं मिला। कोई और शब्द खोजें।</span>
+            कोई भवन नहीं मिला। कोई और शब्द खोजें।<br>
+            <span class="en" style="font-size:13px;">No buildings found. Try a different search.</span>
         </div>
 
         <!-- ── Footer ── -->
         <footer>
-            RIMS — Rajendra Institute of Medical Sciences<br>
-            <span class="hi">रिम्स — राजेंद्र आयुर्विज्ञान संस्थान</span><br>
-            Bariatu, Ranchi — 834009, Jharkhand<br>
-            <span class="hi">बरियातू, राँची — 834009, झारखंड</span>
+            रिम्स — राजेंद्र आयुर्विज्ञान संस्थान<br>
+            <span class="secondary en">RIMS — Rajendra Institute of Medical Sciences</span><br>
+            बरियातू, राँची — 834009, झारखंड<br>
+            <span class="secondary en">Bariatu, Ranchi — 834009, Jharkhand</span>
         </footer>
     </div>
 
     <script>
-        /* ── Search ── */
         const searchInput = document.getElementById('searchInput');
         const cards = document.querySelectorAll('.building-card');
         const sections = document.querySelectorAll('.section-label');
@@ -929,11 +628,11 @@
             let visibleCount = 0;
             cards.forEach(card => {
                 const name = card.querySelector('.card-name').textContent.toLowerCase();
-                const nameHi = (card.querySelector('.card-name-hi') || {}).textContent || '';
+                const nameEn = (card.querySelector('.card-name-en') || {}).textContent || '';
                 const desc = card.querySelector('.card-desc').textContent.toLowerCase();
-                const descHi = (card.querySelector('.card-desc-hi') || {}).textContent || '';
+                const descEn = (card.querySelector('.card-desc-en') || {}).textContent || '';
                 const keywords = (card.dataset.keywords || '').toLowerCase();
-                const searchable = name + ' ' + nameHi + ' ' + desc + ' ' + descHi + ' ' + keywords;
+                const searchable = name + ' ' + nameEn + ' ' + desc + ' ' + descEn + ' ' + keywords;
                 if (!query || searchable.includes(query)) {
                     card.classList.remove('hidden');
                     visibleCount++;
@@ -949,12 +648,10 @@
             noResults.style.display = visibleCount === 0 ? 'block' : 'none';
         });
 
-        /* ── OPD Accordion ── */
         const opdSection = document.getElementById('opdSection');
-        const opdToggle = document.getElementById('opdToggle');
-        opdToggle.addEventListener('click', () => {
+        document.getElementById('opdToggle').addEventListener('click', () => {
             const isOpen = opdSection.classList.toggle('open');
-            opdToggle.setAttribute('aria-expanded', isOpen);
+            document.getElementById('opdToggle').setAttribute('aria-expanded', isOpen);
         });
     </script>
 </body>
